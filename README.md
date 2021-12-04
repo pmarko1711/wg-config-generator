@@ -2,7 +2,7 @@
 
 Simple and a bit dirty bash utility to generate wireguard `wg-quick` configs out of `.conf` templates included in the root directory. 
 
-Can be used to git track wireguard configs without trackign the actual keys.
+Can be used to git track wireguard configs without tracking the actual keys.
 
 
 Requires 
@@ -18,9 +18,9 @@ bash script_generate_configs.sh
 ```
 
 Script iterates over all `*.conf` files that are in the main folder and replaces
-`<KEY_PUBLIC_*>`, `<KEY_PRIVATE_*>` and `<KEY_PRESHARED_*>` tokens with corresponding keys saved in `keys`. If `keys` does not exist yet, corresponding private, public and preshared wireguard keys will be created and saved in `keys`.
+`<KEY_PUBLIC_*>`, `<KEY_PRIVATE_*>` and `<KEY_PRESHARED_*>` tokens with corresponding keys saved in `keys`. If `keys` does not exist yet, file will be created. Missing private, public and preshared wireguard keys will be created and saved in that file. 
 
-Configuration files with the tokens replaced with the actual keys are exported to `export/*.conf`
+Configuration files with the tokens replaced with the actual keys are exported to `export/*.conf`.
 
 ## Example
 ```
@@ -65,7 +65,7 @@ KEY_PRESHARED_ALPHA=gHA70pL5CGWotUtim6dKCbS5lI+6wDQ0xMIx5w3sdDY=
 
 # Generate QR codes of config(s)
 
-Create png for all `export/*.conf` files:
+Create a png file for all `export/*.conf` files:
 ```bash
 bash script_generate_qr_codes.sh
 ```
