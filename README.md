@@ -18,7 +18,7 @@ bash script_generate_configs.sh
 ```
 
 Script iterates over all `*.conf` files that are in the main folder and replaces
-`<KEY_PUBLIC_*>`, `<KEY_PRIVATE_*>` and `<KEY_PRESHARED_*>` tokens with corresponding keys saved in `keys`. If `keys` does not exist yet, file will be created. Missing private, public and preshared wireguard keys will be created and saved in that file. 
+`<KEY_PUBLIC_*>`, `<KEY_PRIVATE_*>` and `<KEY_PRESHARED_*>` tokens with corresponding keys saved in `wg_keys`. If `wg_keys` does not exist yet, file will be created. Missing private, public and preshared wireguard keys will be created and saved in that file. 
 
 Configuration files with the tokens replaced with the actual keys are exported to `export/*.conf`.
 
@@ -56,7 +56,7 @@ PersistentKeepalive = 25
 PresharedKey = gHA70pL5CGWotUtim6dKCbS5lI+6wDQ0xMIx5w3sdDY=
 ```
 
-while `keys`:
+while `wg_keys`:
 ```
 KEY_PUBLIC_SERVER=Jo6eQSdpk19RQRbuZe+8/MxL4eZX+UayVLVZrnJvYlQ=
 KEY_PRIVATE_CLIENT=UOv3GekXnkOUbHLnAY9GU5Gn76kbatvEIlmVOnBVmlU=

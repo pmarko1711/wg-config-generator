@@ -2,7 +2,7 @@
 
 # make sure to have this FILE_KEYS and EXPORT_DIR files and directory in .gitignore
 
-FILE_KEYS="keys"
+FILE_KEYS="wg_keys"
 EXPORT_DIR="export"
 PREFIX_PUBLIC="KEY_PUBLIC_"
 PREFIX_PRIVATE="KEY_PRIVATE_"
@@ -24,7 +24,7 @@ else
     echo "File with keys does not exist yet, will be generated"
 fi
 
-
+echo
 echo "Identifying required keys in config files"
 # find all the keys
 for f in *.conf
@@ -108,7 +108,7 @@ done
 for key in ${KEYS_PRESHARED[@]};
 do
     if [ ! -z ${!key+x} ]; then
-        echo "  Preshared key $key already exists" 
+        echo "  Preshared key $key already exists, skipping" 
     else
         echo "  $key"
         preshared_key_value=`wg genpsk`
